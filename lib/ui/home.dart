@@ -2,10 +2,53 @@ import 'package:first_flutter_app/model/question.dart';
 import 'package:first_flutter_app/util/hexcolor.dart';
 import 'package:flutter/material.dart';
 
+class MovieListView extends StatelessWidget {
+  final List movies = [
+    "1984",
+    "I am Legend",
+    "A Clockwork Orange",
+    "The Zero Theorem",
+    "Snowpiercer",
+    "Brazil",
+    "Metropolis",
+    "Soylent Green",
+    "Bladerunner",
+    "The Island",
+    "District 9",
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Dystopian Movies"),
+        backgroundColor: Colors.blueGrey.shade900,
+      ), //Appbar
+      backgroundColor: Colors.blueGrey.shade400,
+      body: ListView.builder(
+        itemCount: movies.length,
+          itemBuilder: (BuildContext context, int index) {
+        return Card(
+          color: Colors.white,
+          child: ListTile(
+            title: Text(movies[index]),
+          ), //list Tile
+        ); //Card
+      }), //Listview.builder
+    ); //scaffold
+  }
+}
+
+//end of MovieListView
+
+
+
 class QuizApp extends StatefulWidget {
   @override
   _QuizAppState createState() => _QuizAppState();
 }
+
 
 class _QuizAppState extends State<QuizApp> {
   int _currentQuestionIndex = 0;
@@ -166,7 +209,7 @@ class _QuizAppState extends State<QuizApp> {
     _updateQuestion();
   }
 }
-
+//end of BillSplitter
 
 class BillSplitter extends StatefulWidget {
   @override
