@@ -1,8 +1,12 @@
+import 'package:first_flutter_app/model/movie.dart';
 import 'package:first_flutter_app/model/question.dart';
 import 'package:first_flutter_app/util/hexcolor.dart';
 import 'package:flutter/material.dart';
 
 class MovieListView extends StatelessWidget {
+
+  final List<Movie> movieList = Movie.getMovies();
+
   final List movies = [
     "1984",
     "I am Legend",
@@ -27,12 +31,29 @@ class MovieListView extends StatelessWidget {
       ), //Appbar
       backgroundColor: Colors.blueGrey.shade400,
       body: ListView.builder(
-        itemCount: movies.length,
+        itemCount: movieList.length,
           itemBuilder: (BuildContext context, int index) {
         return Card(
+          elevation: 4.5,
           color: Colors.white,
           child: ListTile(
-            title: Text(movies[index]),
+            leading: CircleAvatar(
+              child: Container(
+                decoration: BoxDecoration(
+                  //color: Colors.blue,
+                  borderRadius: BorderRadius.circular(13.9)
+                ),
+                child: Text("H"),
+              ),
+            ),
+            trailing: Text("..."),
+            title: Text(movieList[index].title),
+            subtitle: Text("${movieList[0].title}"),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => MovieListViewDetails(movieName: movieList.elementAt(index).title,)));
+            },
+            //onTap: () => debugPrint("Movie name: ${movies.elementAt(index)}"),
           ), //list Tile
         ); //Card
       }), //Listview.builder
@@ -41,6 +62,32 @@ class MovieListView extends StatelessWidget {
 }
 
 //end of MovieListView
+//new route/screen/page
+class MovieListViewDetails extends StatelessWidget {
+
+  final String movieName;
+
+  const MovieListViewDetails({Key key, this.movieName}) : super(key: key);
+
+  @override
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Movies "),
+        backgroundColor: Colors.blueGrey.shade900,
+      ),
+      body: Center(
+        child: Container(
+          child: RaisedButton(
+            child: Text("Go back ${this.movieName}"),
+            onPressed: (){
+            Navigator.pop(context);
+            }),
+          ),
+      ),
+      );
+  }
+}
 
 
 
