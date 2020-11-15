@@ -19,7 +19,7 @@ class Movie {
         "Will Smith, Alice Braga, Charlie Tahan, Salli Richardson-Whitfield",
         "Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City struggles valiantly to find a cure.",
         "English", "USA", "9 wins & 21 nominations.",
-        "http://ia.media-imdb.com/images/M/MV5BMTU4NzMyNDk1OV5BMl5BanBnXkFtZTcwOTEwMzU1MQ@@._V1_SX300.jpg",
+        "https://dyn1.heritagestatic.com/lf?set=path%5B4%2F6%2F4%2F1%2F4641824%5D&call=url%5Bfile%3Aproduct.chain%5D",
         "7.2", "533,874", "movie", "True", [
           "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI0NTI4NjE3NV5BMl5BanBnXkFtZTYwMDA0Nzc4._V1_.jpg",
           "https://images-na.ssl-images-amazon.com/images/M/MV5BMTIwMDg2MDU4M15BMl5BanBnXkFtZTYwMTA0Nzc4._V1_.jpg",

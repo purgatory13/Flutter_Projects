@@ -33,7 +33,8 @@ class MovieListView extends StatelessWidget {
       body: ListView.builder(
         itemCount: movieList.length,
           itemBuilder: (BuildContext context, int index) {
-        return Card(
+          return movieCard(movieList[index], context);
+        /*return Card(
           elevation: 4.5,
           color: Colors.white,
           child: ListTile(
@@ -64,9 +65,49 @@ class MovieListView extends StatelessWidget {
             },
             //onTap: () => debugPrint("Movie name: ${movies.elementAt(index)}"),
           ), //list Tile
-        ); //Card
+        ); //Card*/
       }), //Listview.builder
     ); //scaffold
+  }
+  Widget movieCard(Movie movie, BuildContext context) {
+    return InkWell(
+      child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 120.0,
+          child: Card(
+            color: Colors.black45,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 8.0,
+              bottom: 8.0,
+              left: 30.0,
+              right: 20.0,),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+
+                    Text(movie.title),
+                   Text("Rating: ${movie.imdbRating} / 10")
+              ]
+              ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text("Released: ${movie.released}"),
+                      Text(movie.runtime),
+                      Text(movie.rated)
+                    ],
+                  )
+        ],
+      ),
+    ),
+    ),
+    ),
+      onTap: () => debugPrint(movie.title),
+    );
   }
 }
 
@@ -691,7 +732,11 @@ CustomButton()
         ),
       ),);
   }
+
+
 }
+
+
 
 class CustomButton extends StatelessWidget {
   @override
