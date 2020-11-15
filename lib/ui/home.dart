@@ -39,11 +39,19 @@ class MovieListView extends StatelessWidget {
           child: ListTile(
             leading: CircleAvatar(
               child: Container(
+                width: 200,
+                  height: 200,
                 decoration: BoxDecoration(
+                  image: DecorationImage(
+                    //image: NetworkImage(movieList[index].images[0]),
+                    image: NetworkImage(movieList[index].poster),
+                    fit: BoxFit.cover
+                  ),
                   //color: Colors.blue,
                   borderRadius: BorderRadius.circular(13.9)
                 ),
-                child: Text("H"),
+                child: null,
+                //child: Text(""),
               ),
             ),
             trailing: Text("..."),
@@ -51,7 +59,8 @@ class MovieListView extends StatelessWidget {
             subtitle: Text("${movieList[0].title}"),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => MovieListViewDetails(movieName: movieList.elementAt(index).title,)));
+                  builder: (context) => MovieListViewDetails(movieName: movieList.elementAt(index).title,
+                  movie: movieList[index] )));
             },
             //onTap: () => debugPrint("Movie name: ${movies.elementAt(index)}"),
           ), //list Tile
@@ -66,8 +75,9 @@ class MovieListView extends StatelessWidget {
 class MovieListViewDetails extends StatelessWidget {
 
   final String movieName;
+  final Movie movie;
 
-  const MovieListViewDetails({Key key, this.movieName}) : super(key: key);
+  const MovieListViewDetails({Key key, this.movieName, this.movie}) : super(key: key);
 
   @override
 Widget build(BuildContext context) {
@@ -79,7 +89,7 @@ Widget build(BuildContext context) {
       body: Center(
         child: Container(
           child: RaisedButton(
-            child: Text("Go back ${this.movieName}"),
+            child: Text("Go back ${this.movie.director}"),
             onPressed: (){
             Navigator.pop(context);
             }),
