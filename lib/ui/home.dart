@@ -33,7 +33,17 @@ class MovieListView extends StatelessWidget {
       body: ListView.builder(
         itemCount: movieList.length,
           itemBuilder: (BuildContext context, int index) {
-          return movieCard(movieList[index], context);
+          return Stack(
+              children:<Widget>[
+
+                movieCard(movieList[index], context),
+
+                Positioned(
+                  top: 10.0,
+                   //left: 10.0,
+                    child: movieImage(movieList[index].poster))
+                   // child: movieCard(movieList[index], context))
+              ]);
         /*return Card(
           elevation: 4.5,
           color: Colors.white,
@@ -72,6 +82,7 @@ class MovieListView extends StatelessWidget {
   Widget movieCard(Movie movie, BuildContext context) {
     return InkWell(
       child: Container(
+        margin: EdgeInsets.only(left: 60),
           width: MediaQuery.of(context).size.width,
           height: 120.0,
           child: Card(
@@ -79,36 +90,80 @@ class MovieListView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 8.0,
               bottom: 8.0,
-              left: 30.0,
+              left: 40.0,
               right: 20.0,),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-
-                    Text(movie.title),
-                   Text("Rating: ${movie.imdbRating} / 10")
-              ]
-              ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text("Released: ${movie.released}"),
-                      Text(movie.runtime),
-                      Text(movie.rated)
-                    ],
-                  )
+
+                      Text(movie.title, style:
+                        TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17.0,
+                          color: Colors.white
+                        ),),
+                     Text("Rating: ${movie.imdbRating} / 10",
+                       style: TextStyle(
+                         fontSize: 14.0,
+                         color: Colors.grey
+                       ),)
+                ]
+                ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Text("Released: ${movie.released}",
+                          style: TextStyle(
+                              fontSize: 14.0,
+                              color: Colors.grey
+                          ),),
+                        Text(movie.runtime,
+                          style: TextStyle(
+                              fontSize: 14.0,
+                              color: Colors.grey
+                          ),),
+                        Text(movie.rated,
+                          style: TextStyle(
+                              fontSize: 14.0,
+                              color: Colors.grey
+                          ),)
+                      ],
+                    )
         ],
       ),
+              ),
     ),
     ),
     ),
-      onTap: () => debugPrint(movie.title),
+      onTap: () => {
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) => MovieListViewDetails(movieName: movie.title,
+          movie: movie )))
+            },
+
     );
   }
+
+  Widget movieImage(String imageUrl) {
+    return Container(
+      width: 100,
+      height: 100,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        image: DecorationImage(
+            image: NetworkImage(imageUrl ?? 'https://cdn.pixabay.com/photo/2019/08/11/18/54/icon-4399690_1280.png'),
+        fit: BoxFit.cover)
+      ),
+    );
+
+  }
+
 }
 
 //end of MovieListView
