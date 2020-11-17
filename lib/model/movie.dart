@@ -6,7 +6,8 @@ class Movie {
         "John Hurt, Richard Burton, Suzanna Hamilton",
         "Winston Smith is a low-ranking member of the ruling Party in London, in the nation of Oceania. Everywhere Winston goes, even his own home, the Party watches him through telescreens; everywhere he looks he sees the face of the Party’s seemingly omniscient leader, a figure known only as Big Brother.",
         "English", "USA, UK", "Evening Standard British Film Award for Best Film in 1985",
-        "https://images-na.ssl-images-amazon.com/images/I/51mTrEcXHJL._AC_.jpg",
+        "https://d2e111jq13me73.cloudfront.net/sites/default/files/styles/product_image_aspect_switcher_170w/public/product-images/csm-movie/1984-poster.jpg?itok=34kcFnr8",
+        //"https://images-na.ssl-images-amazon.com/images/I/51mTrEcXHJL._AC_.jpg",
         "7.1", "65,544", "movie", "True", [
           "https://cdn.theatlantic.com/thumbor/PLSCxGQSGKov_ltuedlqFv4k05Y=/720x405/media/img/mt/2014/04/1984_movie-1/original.jpg",
           "https://imgix.bustle.com/uploads/image/2018/3/21/39229b65-3a17-441f-bdf1-54058d57bde6-1984_still.jpg?w=800&auto=format%2Ccompress&cs=srgb&q=70&fit=crop&crop=faces&dpr=2",
