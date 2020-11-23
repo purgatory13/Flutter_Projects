@@ -15,6 +15,20 @@ class Movie {
           "https://static.rogerebert.com/uploads/review/primary_image/reviews/1984-1984/EB19840101REVIEWS401010301AR.jpg",
           "https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/zyqgk0otoreo9ggkjkgt.jpg"
         ]),
+    Movie("Bazil", "1985", "R", "18 December 1985", "132 min", "Drama, Sci-Fi",
+        "Terry Gilliam", "Terry Gilliam, Tom Stoppard",
+        "Jonathan Pryce, Kim Greist, Robert De Niro, Katherine Helmond",
+        "A bureaucrat in a dystopic society becomes an enemy of the state as he pursues the woman of his dreams.",
+        "English", "USA, UK", "Nominated for 2 Oscars",
+        "https://static.displate.com/280x392/displate/2019-09-21/d693d60b770f92b87203085c6e89261b_a7fd3396239821352e56dbcd6e9594d1.jpg",
+
+        "7.9", "186,015", "movie", "True", [
+          "https://media.timeout.com/images/101619403/630/472/image.jpg",
+          "https://consequenceofsound.net/wp-content/uploads/2015/12/brazil.jpg?quality=80",
+          "https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555356020/shape/mentalfloss/brazil_primary.jpg",
+          "https://i.ytimg.com/vi/tSY1VnNUJzQ/maxresdefault.jpg",
+          "https://www.bfi.org.uk/sites/bfi.org.uk/files/styles/full/public/image/brazil-1985-004-jonathan-pryce-part-shadow-bfi-00m-zdo_0.jpg?itok=GGpYWnTq"
+        ]),
     Movie("I Am Legend", "2007", "PG-13", "14 Dec 2007", "101 min", "Drama, Horror, Sci-Fi",
         "Francis Lawrence", "Mark Protosevich (screenplay), Akiva Goldsman (screenplay), Richard Matheson (novel), John William Corrington, Joyce Hooper Corrington",
         "Will Smith, Alice Braga, Charlie Tahan, Salli Richardson-Whitfield",
