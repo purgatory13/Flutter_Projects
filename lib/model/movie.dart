@@ -50,7 +50,8 @@ class Movie {
         "8.3", "747,365", "movie", "True", [
           "https://img.culturacolectiva.com/cdn-cgi/image/f=auto,w=1600,q=80,fit=contain/content_image/2019/9/9/1567991498288-20-things-you-didnt-know-about-a-clockwork-orange-but-should.001.jpeg",
           "https://cdn.newsapi.com.au/image/v1/ee1b15b0c1bf83819e213647325d08c6",
-          "https://movies-b26f.kxcdn.com/wp-content/uploads/2020/04/Mxdwn-Movies-A-Clockwork-Orange.2.jpg"
+          "https://movies-b26f.kxcdn.com/wp-content/uploads/2020/04/Mxdwn-Movies-A-Clockwork-Orange.2.jpg",
+          "https://i.guim.co.uk/img/media/6b3c6dbfc326643696ca048390137ff1a95d5caf/142_163_1814_1089/master/1814.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=da24dd7a4560c75a504ffca70ec80339"
         ]),
     Movie("The Zero Theorem", "2013", "R", "19 Aug 2014", "107 min", "Comedy, Drama, Fantasy",
         "Terry Gilliam", "Pat Rushin (screenplay), Terry Gilliam (additional dialogue)",
